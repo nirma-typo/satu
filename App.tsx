@@ -1,13 +1,14 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import HomeScreen from "./src/Screen/HomeScreen";
+import WelcomeScreen from "./src/Screen/WelcomeScreen";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 
 const Stack = createNativeStackNavigator();
 
 function RootStack() {
   return (
-    <Stack.Navigator>
-      <Stack.Screen name="Home" component={HomeScreen} />
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="Home" component={WelcomeScreen} />
     </Stack.Navigator>
   );
 }
@@ -15,7 +16,9 @@ function RootStack() {
 export default function App() {
   return (
     <NavigationContainer>
-      <RootStack />
+      <SafeAreaProvider>
+        <RootStack />
+      </SafeAreaProvider>
     </NavigationContainer>
   );
 }

@@ -1,10 +1,15 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, Text, View } from "react-native";
+import gambar from "../../assets/Main.img.png";
 
-export default function HomeScreen() {
+export default function WelcomeScreen() {
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text>Home Screen</Text>
+      <Image source={gambar} style={{ height: 245, width: 245 }} />
+      <View>
+        <Text> Welcome Screen</Text>
+        <Text> </Text>
+      </View>
       <StatusBar style="auto" />
     </View>
   );
